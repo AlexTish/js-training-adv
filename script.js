@@ -53,3 +53,22 @@ let namePerson = 'Артем'
     :namePerson === 'Александр' 
         ? console.log('преподаватель')
         : console.log('студент');
+
+// Создайте функцию, которая принимает 1 аргумент (название произвольное)
+// — Если в качестве аргумента передана не строка - функция оповещает об этом пользователя
+// — В полученной (как аргумент) строке функция должна убрать все пробелы в начале и в конце
+// — Если строка более 30 знаков - то после 30го символа часть текста скрывается и вместо них появляются три точки (...)
+
+const functionString = function(str) {
+    if (!str || typeof str !== 'string') {
+        console.log('Пожалуйста, введите строку');
+        return;
+    } 
+    const trimmedString = str.trim();
+    if (trimmedString.length > 30) {
+        return trimmedString.slice(0, 30) + '...';
+    } else {
+        return trimmedString;
+    }
+}
+console.log(functionString(' Hello, this is a sample string to demonstrate the function.     '));
